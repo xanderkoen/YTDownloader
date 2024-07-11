@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Downloader</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="./js/script.js"></script>
+</head>
+<body class="">
+
+<!-- Navbar -->
+<nav class="bg-gray-800 p-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="text-white text-xl font-bold">Video downloader</div>
+        <div class="flex">
+            <img id="viewmode-icon" src="./icons/moon-solid.svg" class="w-8 h-8">
+        </div>
+    </div>
+</nav>
+
+<div>
+    <h1 class="text-center font-semibold text-xl mt-2">TODO =</h1>
+    <img src="qual.png">
+    <p id="error" class="text-center text-red-500 hidden">Error text :)</p>
+    <p id="status" class="text-center text-green-500 hidden"> Status text :)</p>
+</div>
+
+<!-- Zoekformulier -->
+<div class="flex justify-center w-screen mt-4">
+    <div class="flex">
+        <input type="url" id="link" class="w-full lg:w-96 px-4 py-2 rounded-l-md border border-gray-300 focus:outline-none focus:border-blue-600" placeholder="Video link">
+        <button id="pasteButton" class="flex items-center justify-center px-6 py-2 bg-blue-500 text-white border-2 border-blue-600 hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+            <img src="./icons/paste-dark.svg" class="mr-2">
+            <span>Plak</span>
+        </button>
+        <button id="search" class="px-4 py-2 bg-blue-500 text-white border-2 border-blue-600 rounded-r-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600 disabled:bg-blue-100" disabled>Zoek</button>
+    </div>
+</div>
+
+<div id="video-div" class="mx-auto w-fit bg-gray-100 p-4 border border-gray-300 mt-6 hidden">
+    <div id="video-title" class="text-xl text-center font-bold mb-2">Video Titel Here</div>
+    <div class="flex items-center">
+        <img id="video-thumbnail" src="https://i.ytimg.com/vi_webp/taNwhaBQS-0/maxresdefault.webp" alt="Video Afbeelding" class="mr-4 w-1/2 h-1/2">
+        <div class="mx-6 mb-16 bg-gray-200 p-2 border">
+            <div class="flex items-center pb-2 bg-gray-200">
+                <label for="video-length" class="text-2xl font-semibold mx-2">Video length : </label>
+                <p id="video-length" class="text-2xl font-semibold">Video lenght : 09:09:45</p>
+            </div>
+            <div class="flex items-center pb-2 bg-gray-100">
+                <button id="downloadMp3Button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md m-2 mt-4">Download MP3</button>
+            </div>
+            <div class="flex items-center pb-2 bg-gray-200">
+<!--                <div class="flex flex-col mr-2">-->
+<!--                    <label for="quality" class="text-center">Video Quality :</label>-->
+<!--                    <select id="quality" class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline mr-2">-->
+<!--                        <option value="1080p" selected>1080p</option>-->
+<!--                        <option value="720p">720p</option>-->
+<!--                        <option value="480p">480p</option>-->
+<!--                        <option value="360p">360p</option>-->
+<!--                    </select>-->
+<!--                </div>-->
+                <button id="downloadMp4Button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md m-2 mt-4">Download MP4</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="loader" class="flex justify-center mt-16 hidden">
+    <div class="w-8 h-8 bg-gray-800 rounded-full mx-5 inline-block animate-bounce delay-1"></div>
+    <div class="w-8 h-8 bg-gray-800 rounded-full mx-5 inline-block animate-bounce delay-2"></div>
+    <div class="w-8 h-8 bg-gray-800 rounded-full mx-5 inline-block animate-bounce delay-3"></div>
+</div>
+
+</body>
+</html>
+
+<style>
+    .delay-1 {
+        animation-delay: 0.2s;
+    }
+    .delay-2 {
+        animation-delay: 0.4s;
+    }
+    .delay-3 {
+        animation-delay: 0.6s;
+    }
+</style>
